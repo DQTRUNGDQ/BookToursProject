@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>Natours | Exciting tours for adventurous people</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav nav--tours">
+        <a href="#" class="nav__el">Tất Cả Các Tour</a>
+        <form class="nav__search">
+          <button class="nav__search-btn">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-search"></use>
+            </svg>
+          </button>
+          <input
+            type="text"
+            placeholder="Tìm kiếm Các TOUR"
+            class="nav__search-input"
+          />
+        </form>
+      </nav>
+      <div class="header__logo">
+        <img src="img/logo-white.png" alt="Natours logo" />
+      </div>
+      <nav class="nav nav--user">
+        <a href="#" class="nav__el">Tour Của Tôi</a>
+        <a href="#" class="nav__el">
+          <img
+            src="/dev-data/img/1.jpg"
+            alt="User photo"
+            class="nav__user-img"
+          />
+          <span>TrungDevGod</span>
+        </a>
+
+        <!-- <button class="nav__el">Log in</button>
+        <button class="nav__el nav__el--cta">Sign up</button> -->
+      </nav>
+    </header>
+
+    <!-- In video, this <main> element is wrongly called: <section class="overview">. So in pug template, please use main.main instead of section.overview -->
+    <main class="main">
+      <div class="card-container">
+        <div class="card">
+          <div class="card__header">
+            <div class="card__picture">
+              <div class="card__picture-overlay">&nbsp;</div>
+              <img
+                src="/public/img/tours/HagiangSapa.gif"
+                alt="Tour 1"
+                class="card__picture-img"
+              />
+            </div>
+
+            <h3 class="heading-tertirary">
+              <span>Phố Núi Trong Sương</span>
+            </h3>
+          </div>
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">Tour 5 Ngày 4 Đêm</h4>
+            <p class="card__text">
+              Từ cao nguyên đá Hà Giang khám phá phố núi Sa Pa trong màn sương
+              mờ
+            </p>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-map-pin"></use>
+              </svg>
+              <span>Hà Giang-Sa Pa, Việt Nam</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>18/10/2023</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-flag"></use>
+              </svg>
+              <span>5 điểm dừng chân</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-user"></use>
+              </svg>
+              <span>8 người</span>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <p>
+              <span class="card__footer-value">12.500.000 VND</span>
+              <span class="card__footer-text">mỗi người</span>
+            </p>
+            <p class="card__ratings">
+              <span class="card__footer-value">4.9</span>
+              <span class="card__footer-text">đánh giá (1k)</span>
+            </p>
+            <a href="#" class="btn btn--green btn--small">Chi tiết</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <div class="card__picture">
+              <div class="card__picture-overlay">&nbsp;</div>
+              <img
+                src="/public/img/tours/NinhBinh.webp"
+                alt="Tour 1"
+                class="card__picture-img"
+              />
+            </div>
+
+            <h3 class="heading-tertirary">
+              <span>Núi non trùng điệp</span>
+            </h3>
+          </div>
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">Tour 7 ngày 6 đêm</h4>
+            <p class="card__text">
+              Cùng nhau khám phá khung cảnh vùng đất núi non trùng điệp mang tên
+              Ninh Bình
+            </p>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-map-pin"></use>
+              </svg>
+              <span>Ninh Bình, Việt Nam</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>25/10/2023</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-flag"></use>
+              </svg>
+              <span>4 điểm dừng chân</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-user"></use>
+              </svg>
+              <span>15 người</span>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <p>
+              <span class="card__footer-value">11.800.000 VND</span>
+              <span class="card__footer-text">mỗi người</span>
+            </p>
+            <p class="card__ratings">
+              <span class="card__footer-value">4.8</span>
+              <span class="card__footer-text">đánh giá (10k)</span>
+            </p>
+            <a href="#" class="btn btn--green btn--small">Chi Tiết</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <div class="card__picture">
+              <div class="card__picture-overlay">&nbsp;</div>
+              <img
+                src="/public/img/tours/TaXua.jpg"
+                alt="Tour 1"
+                class="card__picture-img"
+              />
+            </div>
+
+            <h3 class="heading-tertirary">
+              <span>Thiên đường săn mây</span>
+            </h3>
+          </div>
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">Tour 3 ngày 2 đêm</h4>
+            <p class="card__text">
+              Thiên đường săn mây Tà Xùa mang một vẻ đẹp hoang sơ nguyên bản
+            </p>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-map-pin"></use>
+              </svg>
+              <span>Bắc Yên, Sơn La, Việt Nam</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>30/10/2023</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-flag"></use>
+              </svg>
+              <span>4 điểm dừng chân</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-user"></use>
+              </svg>
+              <span>8 người</span>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <p>
+              <span class="card__footer-value">3.000.000 VND</span>
+              <span class="card__footer-text">Mỗi người</span>
+            </p>
+            <p class="card__ratings">
+              <span class="card__footer-value">4.9</span>
+              <span class="card__footer-text">đánh giá (50k)</span>
+            </p>
+            <a href="#" class="btn btn--green btn--small">Chi tiết</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <div class="card__picture">
+              <div class="card__picture-overlay">&nbsp;</div>
+              <img
+                src="/public/img/tours/Hanoi.jpg"
+                alt="Tour 1"
+                class="card__picture-img"
+              />
+            </div>
+
+            <h3 class="heading-tertirary">
+              <span>Thủ đô Việt Nam</span>
+            </h3>
+          </div>
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">Tour 5 ngày 4 đêm</h4>
+            <p class="card__text">
+              Kiến trúc trăm tuổi và nền văn hóa vô cùng phong phú
+            </p>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-map-pin"></use>
+              </svg>
+              <span>Hà Nội, Việt Nam</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>20/10/2023</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-flag"></use>
+              </svg>
+              <span>10 điểm dừng chân</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-user"></use>
+              </svg>
+              <span>18 người</span>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <p>
+              <span class="card__footer-value">4.500.000 VND</span>
+              <span class="card__footer-text">per person</span>
+            </p>
+            <p class="card__ratings">
+              <span class="card__footer-value">4.8</span>
+              <span class="card__footer-text">đánh giá (100k)</span>
+            </p>
+            <a href="#" class="btn btn--green btn--small">Chi tiết</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <div class="card__picture">
+              <div class="card__picture-overlay">&nbsp;</div>
+              <img
+                src="/public/img/tours/HaLong.jpg"
+                alt="Tour 1"
+                class="card__picture-img"
+              />
+            </div>
+
+            <h3 class="heading-tertirary">
+              <span>Vùng Vịnh kỳ vĩ</span>
+            </h3>
+          </div>
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">Tour 3 ngày 2 đêm</h4>
+            <p class="card__text">
+              Di sản thiên nhiên của thế giới với những hòn đảo lớn nhỏ tạo lên
+              khung cảnh kỳ vĩ
+            </p>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-map-pin"></use>
+              </svg>
+              <span>Quảng Ninh, Việt Nam</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>02/11/2023</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-flag"></use>
+              </svg>
+              <span>1 điểm dừng chân</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-user"></use>
+              </svg>
+              <span>25 người</span>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <p>
+              <span class="card__footer-value">1.800.000 VND</span>
+              <span class="card__footer-text">mỗi người</span>
+            </p>
+            <p class="card__ratings">
+              <span class="card__footer-value">4.9</span>
+              <span class="card__footer-text">đánh giá (65k)</span>
+            </p>
+            <a href="/tour.html" class="btn btn--green btn--small">Chi tiết</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">
+            <div class="card__picture">
+              <div class="card__picture-overlay">&nbsp;</div>
+              <img
+                src="/public/img/tours/Hue.jpg"
+                alt="Tour 1"
+                class="card__picture-img"
+              />
+            </div>
+
+            <h3 class="heading-tertirary">
+              <span>Xứ xở mộng mơ</span>
+            </h3>
+          </div>
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">Tour 10 ngày 9 đêm</h4>
+            <p class="card__text">
+              Cố đô vốn có lịch sử và truyền thống lâu đời với những giá trị và
+              bản sắc độc đáo.
+            </p>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-map-pin"></use>
+              </svg>
+              <span>Huế, Việt Nam</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>6/11/2023</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-flag"></use>
+              </svg>
+              <span>12 điểm dừng chân</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <use xlink:href="img/icons.svg#icon-user"></use>
+              </svg>
+              <span>25 người</span>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <p>
+              <span class="card__footer-value">5.800.000 VND</span>
+              <span class="card__footer-text">mỗi người</span>
+            </p>
+            <p class="card__ratings">
+              <span class="card__footer-value">4.7</span>
+              <span class="card__footer-text">đánh giá (80k)</span>
+            </p>
+            <a href="#" class="btn btn--green btn--small">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="footer">
+      <div class="footer__logo">
+        <img src="img/logo-green.png" alt="Natours logo" />
+      </div>
+      <ul class="footer__nav">
+        <li><a href="#">Về chúng tôi</a></li>
+        <li><a href="#">Tải xuống app</a></li>
+        <li><a href="#">Trở thành một hướng dẫn viên</a></li>
+        <li><a href="#">Nghề nghiệp</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+      <p class="footer__copyright">
+        &copy; by TrungDevGod. All rights reserved.
+      </p>
+    </div>
+  </body>
+</html>
