@@ -1069,10 +1069,11 @@ body {
 }
 
 
+
 .container-sub-heading {
   color: #9a9a9a;
   letter-spacing: 2px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 300;
   padding: 60px 0 10px 0;
   text-align: center;
@@ -1102,7 +1103,6 @@ body {
 .text-under-line--green::after {
     background-color: #1bbc9b;
 }
-
 
 
 .card-container {
@@ -1358,4 +1358,69 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
+}
+
+/* <!-- ========================BEGIN BANNER HALF WIDTH====================== --> */
+
+.app-container {
+  margin-top: 80px;
+}
+
+
+.banner {
+  display: flex;
+}
+
+.s.banner-full {
+  flex-direction: column;
+}
+
+.banner-half {
+  height: 268px;
+  background: center no-repeat;
+  background-size: cover;
+  padding: 60px 15px;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear;
+}
+
+.banner-half:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.banner-half__sub-heading {
+  color:#fff;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.banner-half__heading {
+  color:#fff;
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.banner-half__btn {
+  border-radius:  40px;
+  letter-spacing: 2px;
+  line-height: 14px;
+  font-size: 14px;
+  background-color: #ffffff;
+  padding: 15px 35px;
+  text-decoration: none;
+}
+
+.banner-half__btn--yellow {
+    color: #f3a46b;
+}
+
+.banner-half__btn--green {
+    color: #1bbc9b;
 }
