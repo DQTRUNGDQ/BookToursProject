@@ -1,13 +1,15 @@
-const { query } = require('express');
+
 const Tour = require('../models/tourModel');
+
 
 //2) ROUTE HANDLES
 
 exports.getAllTours = async (req, res) => {
+        try {
+        console.log(req.query);
 
-    try {
-
-        // BUILD QUEY
+        // BUILD QUERY
+        // 1) Filtering
 
         const queryObj = { ...req.query };
 
@@ -15,15 +17,22 @@ exports.getAllTours = async (req, res) => {
 
         excludedFields.forEach(el => delete queryObj[el]);
 
-        const query = Tour.find(queryObj);
+        //2) Advanced filtering
 
-        // const query =  Tour.find()
-        // .where('duration').equals(5)
-        // .where('maxGroupSize').equals(25);
+        let queryStr = JSON.stringify(queryObj);
+        queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
+        console.log(JSON.parse(queryStr));
+        
+
+        const query = Tour.find(JSON.parse(queryStr));
 
         // EXECUTE QUERY
 
         const tours = await query;
+
+        // const query =  Tour.find()
+        // .where('duration').equals(5)
+        // .where('maxGroupSize').equals(25);
 
         // SEND RESPONSE
         res.status(200).json({

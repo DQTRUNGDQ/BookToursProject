@@ -31,7 +31,6 @@ body {
   line-height: 1.6;
   font-weight: 300;
   color: #777;
-  padding: 3rem;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -297,22 +296,188 @@ body {
   outline-offset: 3px;
 }
 
+/* <!-- ========================   HEADER  ====================== --> */
+ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .header {
-  background-color: #444;
-  padding: 0 5rem;
-  height: 8rem;
-  position: relative;
-  z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  position: absolute;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.header-container {
+  margin: 0 50px;
+  padding-top: 28px;
+  transform: translateY(0);
+  transform: linear 0.5s;
+}
+
+.header-bar {
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  width: 100%;
+  height: 5rem;
+}
+
+.header-bar-logo {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  width: 7rem;
+}
+
+.header-bar__list {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
+
+.header-bar__list-item{
+  margin: 0 2.2rem;
+  height: 1.8rem;
+}
+
+.header-bar__item-link{
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  line-height: 1.8rem;
+  font-weight: 300;
+  font-family: Gt-light, sans-serif;
+}
+
+.header-bar__search{
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: end;
+}
+
+.header-bar__search-item{
+  height: 3.5rem;
+}
+
+.header-bar__Sitem{
+  color: #000;
+  font-size: 2.2rem;
+}
+
+
+/* <!-- ========================   CONTENT  ====================== --> */
+
+.content{
+  position: relative;
+  top:0;
+  right:0;
+  left: 0;
+}
+
+.content-heading{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.content-heading-group{
+  width: 100%;
+  height: 100%;
+}
+.content-heading__background
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  z-index: 0;
+}
+
+#content-heading__video{
+  object-fit: cover;
+}
+
+.content-heading__foreground{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  top: calc(40% - 3rem);
+  height: (60% + 3rem);
+  right: calc(15%);
+}
+
+
+
+.content-heading__txtbrand{
+  font-size: 8rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+.content-heading-txtslogan{
+  font-size: 5rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+.row-branch{
+  margin-top: 3.4rem;
+}
+
+.content-heading__nav{
+  display: flex;
+}
+
+.content-heading__link{
+  height: 3rem;
+  margin-left: 2.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.content-heading__link:first-child{
+  margin-left: 0.2rem;
+}
+
+.content-heading-link__name{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: Gt-Light, sans-serif;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.4rem;
+}
+
+.content-heading-link__icon{
+  position: relative;
+  color: #fff;
+  margin-left: 1.4rem;
+  border: 0.1rem solid #fff;
+  border-radius: 50%;
+  height: 3.2rem;
+  width: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 @media only screen and (max-width: 62.5em) {
   .header {
     -webkit-box-orient: vertical;
@@ -895,33 +1060,35 @@ body {
 .nav__el,
 .nav__el:link,
 .nav__el:visited {
-  color: #f7f7f7;
+  /* color: #f7f7f7; */
+  color: #fff;
   text-transform: uppercase;
   font-size: 1.6rem;
   text-decoration: none;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
   font-weight: 400;
   background: none;
   border: none;
   cursor: pointer;
   font-family: inherit;
+  padding-right: 2rem;
+  
 }
 .nav__el:hover,
-.nav__el:active {
+.nav__el:active,
+.header-bar__list-item:hover,
+.header-bar__list-item:active {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   text-shadow: 0 0.7rem 1rem black;
 }
-.nav__el:not(:last-child) {
+
+/* .nav__el:not(:last-child) {
   margin-right: 3rem;
-}
+} */
+
 @media only screen and (max-width: 37.5em) {
   .nav__el:not(:last-child) {
     margin-right: 0;

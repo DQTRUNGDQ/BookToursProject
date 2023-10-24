@@ -9,13 +9,18 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
-    <header class="header">
+    <!-- <header class="header">
       <nav class="nav nav--tours">
         <a href="#" class="nav__el">Tất Cả Các Tour</a>
         <form class="nav__search">
@@ -45,12 +50,178 @@
           <span>TrungDevGod</span>
         </a>
 
-        <!-- <button class="nav__el">Log in</button>
-        <button class="nav__el nav__el--cta">Sign up</button> -->
+        <button class="nav__el">Log in</button>
+        <button class="nav__el nav__el--cta">Sign up</button>
       </nav>
-    </header>
+    </header> -->
 
     <!-- In video, this <main> element is wrongly called: <section class="overview">. So in pug template, please use main.main instead of section.overview -->
+
+    <header class="header">
+      <div class="header-container">
+        <nav class="header-bar">
+          <a class="header-bar-logo">
+            <img src="img/logo-white.png" alt="Natours logo" />
+          </a>
+
+          <ul class="header-bar__list">
+            <li class="header-bar__list-item">
+              <a href="" class="header-bar__item-link"> Trải nghiệm phù hợp </a>
+            </li>
+            <li class="header-bar__list-item">
+              <a href="" class="header-bar__item-link"> Tours </a>
+            </li>
+            <li class="header-bar__list-item">
+              <a href="" class="header-bar__item-link"> Về chúng tôi </a>
+            </li>
+            <li class="header-bar__list-item">
+              <a href="" class="header-bar__item-link"> Tin Tức </a>
+            </li>
+            <li class="header-bar__list-item">
+              <a href="" class="header-bar__item-link"> Liên Hệ </a>
+            </li>
+          </ul>
+
+          <ul class="header-bar__search">
+            <li class="header-bar__search-item">
+              <a href="" class="header-bar__Sitem">
+                <i class="fa-regular fa-heart"></i>
+              </a>
+            </li>
+          </ul>
+          <div>
+            <button class="nav__el">Log in</button>
+            <button class="nav__el nav__el--cta">Sign up</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="content-heading">
+        <div class="content-heading-group">
+          <div class="content-heading__background">
+            <video
+              id="content-heading__video"
+              width="100%"
+              height="100%"
+              playsinline=""
+              muted=""
+              autoplay=""
+              loop=""
+            >
+              <source
+                src="img/videos/intro-Vid-V2-No-Sound-copy.mp4"
+                type="video/mp4"
+              />
+              Trình duyệt của bạn không hỗ trợ thẻ video
+            </video>
+          </div>
+
+          <div class="content-heading__foreground">
+            <div class="content-up">
+              <div class="row">
+                <div class="content-heading__brand">
+                  <h1 class="content-heading__txtbrand">Natours & Bạn</h1>
+                </div>
+                <div class="content-heading__slogan">
+                  <h3 class="content-heading-txtslogan">
+                    Dấu Ấn Của Những Chuyến Đi
+                  </h3>
+                </div>
+              </div>
+              <div class="row-branch">
+                <div class="content-heading__nav">
+                  <a href="" class="content-heading__link">
+                    <span class="content-heading-link__name">
+                      Trải nghiệm của chúng ta
+                    </span>
+                    <span class="content-heading-link__icon">
+                      <i class="fa-solid fa-angle-right"></i>
+                    </span>
+                  </a>
+
+                  <a href="" class="content-heading__link">
+                    <span class="content-heading-link__name">
+                      Lên kế hoạch cho chuyến đi
+                    </span>
+                    <span class="content-heading-link__icon">
+                      <i class="fa-solid fa-angle-right"></i>
+                    </span>
+                  </a>
+
+                  <a href="" class="content-heading__link">
+                    <span class="content-heading-link__name">
+                      Blog và Báo Chí
+                    </span>
+                    <span class="content-heading-link__icon">
+                      <i class="fa-solid fa-angle-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="content-down">
+              <div class="row">
+                <div class="content-heading-member__group">
+                  <a href="" class="content-heading__member">
+                    <img
+                      src="./img/member/Vietravel_Logo.png"
+                      alt="VietTravel"
+                      class="content-heading__member-logo content-heading__member--viettravel"
+                    />
+                  </a>
+                </div>
+                <div class="content-heading-member__group flex-right">
+                  <span class="content-heading__member">
+                    <img
+                      src="./img/member/VnExpress_logo.png"
+                      alt="VNEx member"
+                      class="content-heading__member-logo content-heading__member--VNExpress"
+                    />
+                  </span>
+                  <span class="content-heading__member">
+                    <img
+                      src="./img/member/Vietnam-Airlines-Logo.png"
+                      alt="VNAirline member"
+                      class="content-heading__member-logo content-heading__member--VNAirline"
+                    />
+                  </span>
+                  <span class="content-heading__member">
+                    <img
+                      src="./img/member/VietJet-Air-logo.png"
+                      alt="VJAir member"
+                      class="content-heading__member-logo content-heading__member--VietJetAir"
+                    />
+                  </span>
+                  <span class="content-heading__member">
+                    <img
+                      src="./img/member/dentsu.png"
+                      alt="Dentsu member"
+                      class="content-heading__member-logo content-heading__member--Dentsu"
+                    />
+                  </span>
+                  <span class="content-heading__member">
+                    <img
+                      src="./img/member/travel&leisure.png"
+                      alt="Travel&Leisure member"
+                      class="content-heading__member-logo content-heading__member--TL"
+                    />
+                  </span>
+                  <span class="content-heading__member">
+                    <img
+                      src="./img/member/EuroTravel.png"
+                      alt="EuroTravel member"
+                      class="content-heading__member-logo content-heading__member--EuroTravel"
+                    />
+                  </span>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+    </div>
     <main class="main">
       <h4 class="container-sub-heading">VIET NAM</h4>
       <h2 class="container-heading">
