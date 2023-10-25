@@ -1,47 +1,34 @@
 
 const Tour = require('../models/tourModel');
+const APIFeatures = require('../utils/apiFeatures');
 
+exports.aliasTopTours = (req, res, next) => {
+    req.query.limit = '5';
+    req.query.sort = '-ratingsAverage,price';
+    req.query.fields = 'name,price,ratingsAverage,summary,difficulty'
+    next();
+};
 
 //2) ROUTE HANDLES
 
 exports.getAllTours = async (req, res) => {
         try {
-        console.log(req.query);
+            // EXECUTE QUERY
+            const features = new APIFeatures(Tour.find(), req.query)
+                .filter()
+                .sort()
+                .limitFields()
+                .paginate();
+            const tours = await features.query;
 
-        // BUILD QUERY
-        // 1) Filtering
-
-        const queryObj = { ...req.query };
-
-        const excludedFields = ['page', 'sort', 'limit', 'fields'];
-
-        excludedFields.forEach(el => delete queryObj[el]);
-
-        //2) Advanced filtering
-
-        let queryStr = JSON.stringify(queryObj);
-        queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
-        console.log(JSON.parse(queryStr));
-        
-
-        const query = Tour.find(JSON.parse(queryStr));
-
-        // EXECUTE QUERY
-
-        const tours = await query;
-
-        // const query =  Tour.find()
-        // .where('duration').equals(5)
-        // .where('maxGroupSize').equals(25);
-
-        // SEND RESPONSE
-        res.status(200).json({
-            status: 'success',
-            results: tours.length,
-            data: {
-                tours
-            }
-        });  
+            // SEND RESPONSE
+            res.status(200).json({
+                status: 'success',
+                results: tours.length,
+                data: {
+                    tours
+                }
+            });  
     } catch(err) {
         res.status(404).json(
             {
@@ -129,8 +116,22 @@ exports.deleteTour = async (req, res) => {
         res.status(404).json({
             status: 'fail',
             message: err
-        })
+        });
     }
     
+};
+
+exports.getTourStats = async (req, res) => {
+    try {
+        const stats = Tour.aggregate([
+            
+        ])
+
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        });
+    }
 }
 

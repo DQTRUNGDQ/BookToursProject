@@ -373,7 +373,7 @@ a {
 }
 
 .header-bar__Sitem{
-  color: #000;
+  color: #fff;
   font-size: 2.2rem;
 }
 
@@ -1079,7 +1079,9 @@ a {
 .nav__el:hover,
 .nav__el:active,
 .header-bar__list-item:hover,
-.header-bar__list-item:active {
+.header-bar__list-item:active,
+.header-bar__search-item:hover,
+.header-bar__search-item:active {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   text-shadow: 0 0.7rem 1rem black;
