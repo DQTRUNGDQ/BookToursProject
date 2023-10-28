@@ -310,13 +310,22 @@ a {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   height: auto;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99;
 }
+
+.header.sticky  {
+  background-color:#000;
+  padding-bottom: 20px;
+  -webkit-transition: all 1s;
+  transition: all 2s;
+}
+
+
 
 .header-container {
   margin: 0 50px;
@@ -335,9 +344,9 @@ a {
 .header-bar-logo {
   display: flex;
   justify-content: center;
-  color: #fff;
   width: 7rem;
 }
+
 
 .header-bar__list {
   display: flex;
@@ -376,6 +385,74 @@ a {
   color: #fff;
   font-size: 2.2rem;
 }
+
+.header-container-fixed {
+  position: relative;
+  padding-top: 0;
+  width: 100%;
+  background-color: #fff;
+  top: calc(-50px - 80px);
+  transition: top 0.5s;
+}
+
+.header-bar-fixed{
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  padding: 0 2rem;
+}
+
+.header-bar-logo__fixed{
+  display: flex;
+  width: 7rem;
+  height: 100%;
+}
+
+.header-fixed-logo__img{
+  width: 4.5rem;
+  height: 4.5rem;
+  filter: brightness(0%);
+}
+
+
+.header-bar-list_fixed{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-bar-fixed__list-item{
+  margin: 0 2.2rem;
+  height: 1.8rem;
+}
+
+.header-bar-fixed__item-link{
+  color:#000;
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  line-height: 1.8rem;
+  font-weight: 300;
+  font-family: Gt-Light, sans-serif;
+}
+
+.header-bar-fixed__search{
+  width: 30rem;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-bar-fixed__search-item {
+  line-height: 2.2rem;
+}
+
+.header-bar-fixed__Sitem{
+  color: #000;
+  font-size:  2.2rem;
+}
+
+
 
 
 /* <!-- ========================   CONTENT  ====================== --> */
@@ -421,7 +498,6 @@ a {
   height: (60% + 3rem);
   right: calc(15%);
 }
-
 
 
 .content-heading__txtbrand{
@@ -1057,6 +1133,13 @@ a {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
+
+
+.btn-header-fixed{
+  align-items: center;
+  display: flex;
+}
+
 .nav__el,
 .nav__el:link,
 .nav__el:visited {
@@ -1074,14 +1157,47 @@ a {
   cursor: pointer;
   font-family: inherit;
   padding-right: 2rem;
-  
+
 }
+
+
 .nav__el:hover,
 .nav__el:active,
 .header-bar__list-item:hover,
 .header-bar__list-item:active,
 .header-bar__search-item:hover,
 .header-bar__search-item:active {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  text-shadow: 0 0.7rem 1rem black;
+}
+
+.nav__el-fixed,
+.nav__el-fixed:link,
+.nav__el-fixed:visited {
+  /* color: #f7f7f7; */
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding-right: 2rem;
+}
+
+
+.nav__el-fixed:hover,
+.nav__el-fixed:active,
+.header-bar-fixed__list-item:hover,
+.header-bar-fixed__list-item:active,
+.header-bar-fixed__search-item:hover,
+.header-bar-fixed__search-item:active {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   text-shadow: 0 0.7rem 1rem black;
