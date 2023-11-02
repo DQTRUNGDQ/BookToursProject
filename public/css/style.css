@@ -21,10 +21,25 @@
   box-sizing: inherit;
 }
 
+@font-face {
+    font-family: Gt-Light;
+    src: url(../Asset/text-fonts/gtwalsheim.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal
+  }
+
+
+@font-face {
+    font-family: Nocturne-Light;
+    src: url(../Asset/text-fonts/nocturne_serif_light.ttf) format('truetype');
+}
+
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: Nocturne-Light, serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -386,74 +401,6 @@ a {
   font-size: 2.2rem;
 }
 
-.header-container-fixed {
-  position: relative;
-  padding-top: 0;
-  width: 100%;
-  background-color: #fff;
-  top: calc(-50px - 80px);
-  transition: top 0.5s;
-}
-
-.header-bar-fixed{
-  display: flex;
-  justify-content: space-between;
-  height: 5rem;
-  padding: 0 2rem;
-}
-
-.header-bar-logo__fixed{
-  display: flex;
-  width: 7rem;
-  height: 100%;
-}
-
-.header-fixed-logo__img{
-  width: 4.5rem;
-  height: 4.5rem;
-  filter: brightness(0%);
-}
-
-
-.header-bar-list_fixed{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-bar-fixed__list-item{
-  margin: 0 2.2rem;
-  height: 1.8rem;
-}
-
-.header-bar-fixed__item-link{
-  color:#000;
-  font-size: 1.2rem;
-  letter-spacing: 0.25rem;
-  text-transform: uppercase;
-  line-height: 1.8rem;
-  font-weight: 300;
-  font-family: Gt-Light, sans-serif;
-}
-
-.header-bar-fixed__search{
-  width: 30rem;
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.header-bar-fixed__search-item {
-  line-height: 2.2rem;
-}
-
-.header-bar-fixed__Sitem{
-  color: #000;
-  font-size:  2.2rem;
-}
-
-
-
 
 /* <!-- ========================   CONTENT  ====================== --> */
 
@@ -494,8 +441,8 @@ a {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  top: calc(40% - 3rem);
-  height: (60% + 3rem);
+  top: calc(30% - 3rem);
+  height: calc(60% + 3rem);
   right: calc(15%);
 }
 
@@ -552,6 +499,290 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+
+.content-down {
+    position: relative;
+    display: flex;
+    margin-left: 10rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-heading-member__group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 90px;
+  height: 5rem;
+  margin-bottom: 4.4rem;
+
+}
+
+.flex-right{
+  float:right;
+  align-items: center;
+  width: 850px;
+  height: 50px;
+  padding-left: 20rem;
+}
+
+.content-heading__member{
+  margin: 0 2.4rem;
+}
+
+.content-heading__member:last-child{
+  margin-right: 4.8rem;
+}
+
+.content-heading__member-logo{
+  display: block;
+  font-size: 12px;
+}
+
+.content-heading__member--viettravel{
+  height: 10rem;
+  width: 22rem;
+  margin-left: 4.2rem;
+  display: flex;
+}
+
+.content-heading__member--VNExpress{
+  height: 3rem;
+  width: 10rem;
+}
+.content-heading__member--VNAirline{
+  height: 7rem;
+  width: 10rem;
+}
+.content-heading__member--LuxuryTravel{
+  height: 3.6rem;
+}
+.content-heading__member--TreasureLeisure{
+  height: 2.2rem;
+}
+.content-heading__member--EuroTravel{
+  height: 5rem;
+}
+
+.slow-appear{
+  display: none;
+  opacity: 0;
+  transition: opacity linear 0.2s;
+  animation: fadeIn linear 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* CONTENT-SECTION-HEADING */
+
+.content-section__heading{
+  font-size: 5.2rem;
+  font-weight: 300;
+  color: #613842;
+}
+
+.content-section__desc{
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.content-location{
+  margin-top: 10rem;
+}
+
+.content-location__content{
+  margin-bottom: 7.6rem;
+  width: 100%;
+}
+
+.content-location__heading{
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.content-location__desc{
+  width: 67rem;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+
+/* SEARCH-WRAPPER */
+
+.search__wrapper{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  min-width: 600px;
+  box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
+  transition: transform .4s;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 60px 0;
+  float: left;
+}
+
+.search__box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.search__location{
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  width: 300px;
+  height: 100%;
+  position: relative;
+}
+
+.search__location-icon{
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.search__location-icon i {
+  color: #969696;
+  font-size: 16px;
+}
+
+.search__location-input{
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+
+.search__date{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  width: 115px;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.search__date-icon{
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.search__date-icon i{
+  color: #666;
+  font-size: 16px;
+}
+
+.search__date-text{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.search__departure{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  width: 135px;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.search__departure-icon{
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.search__departure-icon i{
+  color: #666;
+  font-size: 16px;
+}
+
+.search__departure-text{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.search__btn{
+  padding: 0 20px;
+  height: 36px;
+  background-color: #555;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.search__btn-icon{
+  color: #fff;
+  font-size: 16px;
+}
+
+.search__box--separate::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 70%;
+  top:50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #eaeaea;
+}
+
+.search__box--active {
+  box-shadow: inset 0 0 0 2px rgb(0 0 0 / 14%);
+  color: #000;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 62.5em) {
