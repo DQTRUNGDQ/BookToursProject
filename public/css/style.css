@@ -606,43 +606,6 @@ a {
     }
 }
 
-/* CONTENT-SECTION-HEADING */
-
-.content-section__heading{
-  font-size: 5.2rem;
-  font-weight: 300;
-  color: #613842;
-}
-
-.content-section__desc{
-  color: #000;
-  font-size: 1.8rem;
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-.content-location{
-  margin-top: 10rem;
-}
-
-.content-location__content{
-  margin-bottom: 7.6rem;
-  width: 100%;
-}
-
-.content-location__heading{
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.content-location__desc{
-  width: 67rem;
-  text-align: center;
-  margin: auto;
-}
-
-
-
 
 /* SEARCH-WRAPPER */
 
@@ -776,13 +739,246 @@ a {
 }
 
 
+/* CONTENT-SECTION-HEADING */
+
+.content-section__heading{
+  font-size: 5.2rem;
+  font-weight: 300;
+  color: #613842;
+}
+
+.content-section__desc{
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.content-location{
+  margin-top: 10rem;
+}
+
+.content-location__content{
+  margin-bottom: 7.6rem;
+  width: 100%;
+}
+
+.content-location__heading{
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.content-location__desc{
+  width: 67rem;
+  text-align: center;
+  margin: auto;
+}
 
 
 
+/* TOUR */
+
+.tour{
+  margin: 0 70px;
+}
+
+/*Slick-slider*/
+.slick-initialized .slick-slide{
+  margin:0 10px;
+}
+
+.slick-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: 1;
+  z-index: 2;
+  transition: all 0.2s linear;
+}
+
+.slick-arrow:hover{
+  box-shadow: 0 0 5px 0 rgb(246 94 57 / 50%);
+  color: rgb(246 94 57 / 50%);
+  width: 45px;
+  height: 45px;
+}
+
+.slick-prev{
+  left: 0;
+}
+
+.slick-next{
+  right: 0;
+}
+
+.slick-dots {
+  position: relative;
+  margin: 10px 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0 20px;
+}
+
+.slick-dots button{
+  font-size: 0;
+  width: 15px;
+  height:15px;
+  border-radius: 100%;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  transition: all 0.2s linear;
+}
+
+.slick-dots .slick-active button{
+  background-color: #2cccff;
+}
 
 
+.tour__item {
+  position: relative;
+  overflow:hidden;
+  border-radius: 5px;
+}
+
+.tour__img{
+  width: 100%;
+  height: 350px;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.tour__img:hover {
+  transform: scale(1.1);
+}
+
+.tour__info {
+  position: absolute;
+  bottom: 10%;
+  left: 10px;
+  color: #fff;
+}
+
+.tour__name{
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.tour__quantity {
+  font-size: 16px;
+  margin-top: 12px;
+  line-height: 18px;
+}
+
+.tour__quantity span {
+  opacity: 0.7;
+}
+
+/*CONTENT-SAYS-CONTAINER*/
+
+.slick-prev__says{
+  top:90%;
+  left:45%;
+}
+
+.slick-next__says{
+  top:90%;
+  right:45%;
+}
+
+.content-says{
+  position: relative;
+  margin-top:13.8rem;
+  height: 70rem
+}
+
+.content-says-container{
+  position: relative;
+  width: 100%;
+  height: 46rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.content-says__heading{
+  text-align: center;
+  height: 6rem;
+}
+
+.content-says-group{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.content-says-slider{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 21.4rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2.6rem 0;
+}
 
 
+.content-says__background-img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.content-says-slider__text{
+  display: flex;
+}
+
+.content-says-slider__quote{
+  width: 35px;
+  height: 89px;
+  font-size: 25px;
+  color: #613842;
+  margin:0 20px;
+}
+
+.content-says-slider__quote:first-child{
+  align-self: flex-start;
+  transform: translateY(-20%);
+}
+
+.content-says-slider__quote:last-child{
+  align-self: flex-end;
+  transform: translateY(50%);
+}
+
+.content-says-slider__desc{
+  text-align: center;
+}
+
+.content-says__client{
+  font-size: 2.6rem;
+  color: #613842;
+}
 
 
 @media only screen and (max-width: 62.5em) {
