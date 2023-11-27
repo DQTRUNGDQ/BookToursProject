@@ -367,6 +367,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .header-bar__list-item{
@@ -394,6 +395,7 @@ a {
 
 .header-bar__search-item{
   height: 3.5rem;
+  cursor: pointer;
 }
 
 .header-bar__Sitem{
@@ -1244,21 +1246,8 @@ a {
   padding: calc(5rem + var(--section-rotate)) 0;
   position: relative;
   z-index: 1000;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right bottom,
-    from(#7dd56f),
-    to(#28b487)
-  );
   background: linear-gradient(to right bottom, #7dd56f, #28b487);
   clip-path: polygon(
-    0 var(--section-rotate),
-    100% 0,
-    100% calc(100% - var(--section-rotate)),
-    0 100%
-  );
-  -webkit-clip-path: polygon(
     0 var(--section-rotate),
     100% 0,
     100% calc(100% - var(--section-rotate)),
@@ -1272,7 +1261,6 @@ a {
   grid-column-gap: 6rem;
   grid-auto-flow: column;
   overflow-x: scroll;
-  -ms-scroll-snap-type: x mandatory;
   scroll-snap-type: x mandatory;
 }
 .reviews__card {
@@ -1280,18 +1268,8 @@ a {
   padding: 4rem;
   background-color: #f7f7f7;
   border-radius: 3px;
-  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  scroll-snap-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 .reviews:before,
@@ -1300,11 +1278,7 @@ a {
   width: 2rem;
 }
 .reviews__avatar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 2rem;
 }
@@ -1358,7 +1332,6 @@ a {
   background-color: #fff;
   padding: 9rem 5rem 9rem 21rem;
   border-radius: 2rem;
-  -webkit-box-shadow: 0 3rem 8rem 0.5rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 3rem 8rem 0.5rem rgba(0, 0, 0, 0.15);
 }
 .cta__img {
@@ -1368,7 +1341,6 @@ a {
   left: 0;
   top: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 1rem 0.5rem 3rem rgba(0, 0, 0, 0.15);
   box-shadow: 1rem 0.5rem 3rem rgba(0, 0, 0, 0.15);
 }
 .cta__img--logo {
@@ -1376,22 +1348,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right bottom,
-    from(#7dd56f),
-    to(#28b487)
-  );
   background: linear-gradient(to right bottom, #7dd56f, #28b487);
   z-index: 10;
-  -webkit-transform: translate(-35%, -50%);
   transform: translate(-35%, -50%);
 }
 .cta__img--logo img {

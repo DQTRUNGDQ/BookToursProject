@@ -1,0 +1,123 @@
+
+.header-dt {
+  position: relative;
+  background-color: #000;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  transition: all 1s;
+}
+
+
+.header-container-dt {
+  margin: 0 50px;
+  padding-bottom: 20px;
+  padding-top: 28px;
+  transform: translateY(0);
+  transform: linear 0.5s;
+}
+
+.header-bar-dt {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+}
+
+.header-bar-logo-dt {
+  display: flex;
+  justify-content: center;
+  width: 7rem;
+}
+
+
+.header-bar__list-dt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header-bar__list-item-dt{
+  margin: 0 2.2rem;
+  height: 1.8rem;
+}
+
+.header-bar__item-link-dt{
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  line-height: 1.8rem;
+  font-weight: 300;
+  font-family: Gt-light, sans-serif;
+}
+
+.header-bar__search-dt{
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: end;
+}
+
+.header-bar__search-item-dt{
+  height: 3.5rem;
+  cursor: pointer;
+}
+
+.header-bar__Sitem-dt{
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+.btn-header-dt{
+  align-items: center;
+  display: flex;
+}
+
+.nav__el-dt,
+.nav__el-dt:link,
+.nav__el-dt:visited {
+  /* color: #f7f7f7; */
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding-right: 2rem;
+
+}
+
+
+.nav__el-dt:hover,
+.nav__el-dt:active,
+.header-bar__list-item-dt:hover,
+.header-bar__list-item-dt:active,
+.header-bar__search-item-dt:hover,
+.header-bar__search-item-dt:active {
+  transform: translateY(-2px);
+  text-shadow: 0 0.7rem 1rem black;
+}
+
+.nav__el--cta {
+  padding: 1rem 3rem;
+  border-radius: 10rem;
+  border: 1px solid currentColor !important;
+  transition: all 0.3s;
+}
+.nav__el--cta:hover {
+  background-color: #f7f7f7;
+  color: #777;
+  text-shadow: none;
+  border-color: #f7f7f7;
+}

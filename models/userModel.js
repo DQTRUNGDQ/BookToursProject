@@ -6,36 +6,36 @@ const bcrypt = require('bcryptjs');
 const userSchema = new mongoose.Schema({
     name: {
         type:String,
-        required: [true, 'Please tell us your name']
+        required: [true, 'Làm ơn hãy nói cho chúng tôi tên của bạn']
     },
     email: {
         type: String,
-        required: [true, 'Please provide your email'],
+        required: [true, 'Làm ơn hãy cung cấp Email của bạn'],
         unique: true,
         lowercase: true,
-        validate: [validator.isEmail, 'Please provide a valid email']
+        validate: [validator.isEmail, 'Làm ơn hãy cung cấp một Email hợp lệ']
     },
     photo: String,
     role: {
         type: String,
-        enum: ['user', 'guide', 'lead-guide', 'admin'],
+        enum: ['user', 'guide', 'lead-guide', 'admin','intern'],
         default: 'user'
     },
     password: {
         type: String,
-        required: [true, 'Please provide a password'],
+        required: [true, 'Làm ơn hãy cung cấp một mật khẩu'],
         minlength: 8,
         select: false
     },
     passwordConfirm: {
         type: String,
-        required: [true, 'Please confirm your password'],
+        required: [true, 'Làm ơn hãy xác nhận lại mật khẩu của bạn'],
         validate: {
             // This only works on CREATE & SAVE!!!
             validator: function(el) {
                 return el === this.password; 
             },
-            message: 'Password are not the same!'
+            message: 'Mật khẩu không trùng nhau!'
         }
     },
     passwordChangedAt: Date,
@@ -50,10 +50,10 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre('save', async function(next) {
-    // Only run this function if password was actually modified
+    // Chỉ chạy hàm này nếu mật khẩu đã thực sự được thay đổi 
     if(!this.isModified('password')) return next();
 
-    // Hash the password with cost of 12
+    // Băm mật khẩu với cost factor là 12 
     this.password = await bcrypt.hash(this.password, 12);
 
     // Delete passwordConfirm field
@@ -108,7 +108,7 @@ userSchema.methods.createPasswordResetToken = function() {
     this.passwordResetExpires = Date.now() +  10* 60 * 1000  ;
 
     return resetToken;
-}
+};
 
 const User = mongoose.model('User', userSchema);
 

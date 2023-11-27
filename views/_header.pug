@@ -1,0 +1,109 @@
+header.header
+    .header-container
+        nav.header-bar
+            a.header-bar-logo(href='/')
+                img(src='/img/logo-white.png' alt='Natours logo')
+            ul.header-bar__list
+                li.header-bar__list-item 
+                    a.header-bar__item-link Trải nghiệm phù hợp
+                li.header-bar__list-item
+                    a.header-bar__item-link Tours
+                li.header-bar__list-item
+                    a.header-bar__item-link Về chúng tôi
+                li.header-bar__list-item
+                    a.header-bar__item-link Tin tức
+                li.header-bar__list-item 
+                    a.header-bar__item-link Liên hệ
+            ul.header-bar__search
+                li.header-bar__search-item
+                    a.header-bar__Sitem
+                        i.fa-regular.fa-heart
+            .btn-header
+                a(href='')
+                    button.nav__el Đăng Nhập
+                    button.nav__el.nav__el--cta Đăng Ký
+
+.content 
+    section.content-heading
+        .content-heading-group
+            .content-heading__background
+                video#content-heading__video(width='100%' height='100%' playsinline muted autoplay loop) 
+                    source(src='/img/videos/intro-Vid-V2-No-Sound-copy.mp4' type='video/mp4')  
+                    p Trình duyệt của bạn không hỗ trợ thẻ video.
+            .content-heading__foreground
+                .content-up
+                    .nothing 
+                        .content-heading__brand.slow-appear
+                            h1.content-heading__txtbrand Natours &amp; Bạn
+                        .content-heading__slogan.slow-appear
+                            h3.content-heading-txtslogan Dấu Ấn Của Những Chuyến Đi
+                    .row-branch 
+                        .content-heading__nav.slow-appear
+                            a.content-heading__link
+                                span.content-heading-link__name Trải nghiệm của chúng ta
+                                span.content-heading-link__icon
+                                    i.fa-solid.fa-angle-right
+                            a.content-heading__link
+                                span.content-heading-link__name Lên kế hoạch cho chuyến đi
+                                span.content-heading-link__icon
+                                    i.fa-solid.fa-angle-right
+                            a.content-heading__link
+                                span.content-heading-link__name Blog và báo chí
+                                span.content-heading-link__icon
+                                    i.fa-solid.fa-angle-right
+                .search__wrapper.slow-appear
+                    .search__box
+                        .search__location.search__box--separate.search__box--active
+                            .search__location-icon
+                                i.ri-map-pin-line
+                            input.search__location-input(type='text'  placeholder='Nơi mà bạn muốn đến?')
+                        .search__date.search__box--separate.search__box--active
+                            .search__date-icon
+                                i.ri-calendar-2-fill
+                            span.search__date-text Ngày
+                        .search__departure.search__box--active
+                            .search__departure-icon
+                                i.ri-send-plane-fill
+                            span.search__departure-text Khởi hành từ
+                    button.search__btn
+                        i.search__btn-icon.ri-search-line
+                .content-down
+                    .row
+                        .content-heading-member__group.slow-appear
+                            a.content-heading__member
+                                img.content-heading__member-logo.content-heading__member--viettravel(
+                                    src='./img/member/Vietravel_Logo.png'
+                                    alt='VietTravel'
+                                )
+                        .slow-appear.content-heading-member__group.flex-right
+                            span.content-heading__member
+                                .img.content-heading__member-logo.content-heading__member--VNExpress(
+                                    src='./img/member/VnExpress_logo.png'
+                                    alt='VNEx member'
+                                    )
+                            span.content-heading__member
+                                .img.content-heading__member-logo.content-heading__member--VNAirline(
+                                    src='./img/member/Vietnam-Airlines-Logo.png'
+                                    alt='VNAirline member'
+                                )
+                            span.content-heading__member
+                                img.content-heading__member-logo.content-heading__member--VietJetAir(
+                                    src='./img/member/VietJet-Air-logo.png'
+                                    alt='VJAir member'
+                                )
+                            </span>
+                            span.content-heading__member
+                                img.content-heading__member-logo.content-heading__member--LuxuryTravel(
+                                    src='./img/member/Luxury Travel.png'
+                                    alt='Luxury Travel member'
+                                )
+                            span.content-heading__member
+                                img.content-heading__member-logo.content-heading__member--TreasureLeisure(
+                                    src='./img/member/travel&leisure.png'
+                                    alt='Travel&Leisure member'
+                                )
+                            span.content-heading__member
+                                img.content-heading__member-logo.content-heading__member--EuroTravel(
+                                    src='./img/member/EuroTravel.png'
+                                    alt='EuroTravel member'
+                                ) 

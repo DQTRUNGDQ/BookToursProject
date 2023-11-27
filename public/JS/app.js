@@ -25,4 +25,7 @@ $(document).ready(function(){
     "<button type='button' class='slick-next__says slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
   });
 
+
+
 });
+

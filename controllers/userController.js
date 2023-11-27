@@ -2,6 +2,8 @@
 const User = require('../models/userModel');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
+const factory = require('./handlerFactory');
+
 
 const filterObj = (obj, ...allowedFields) => {
     const newObj = {};
@@ -11,20 +13,10 @@ const filterObj = (obj, ...allowedFields) => {
     return newObj;
 }
 
-
-exports.getAllUsers = catchAsync(async(req, res, next) => {
-    const users = await User.find();
-
-            // SEND RESPONSE
-            res.status(200).json({
-                status: 'success',
-                results: users.length,
-                data: {
-                    users
-                }
-            });  
-
-});
+exports.getMe = (req, res, next) => {
+    req.params.id = req.user.id;
+    next();
+};
 
 exports.updateMe = catchAsync(async(req, res, next) => {
     // 1)  Tạo lỗi nếu user POSTs dữ liệu mật khẩu
@@ -64,27 +56,18 @@ exports.deleteMe = catchAsync(async (req, res, next) =>
     });
 });
 
- exports.getUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This route is not yet defined!'
-    });
-};
+
+
  exports.createUser = (req, res) => {
     res.status(500).json({
         status: 'err',
-        message: 'This route is not yet defined!'
+        message: 'Route này không xác định! Làm ơn hãy sử dụng /signup thay cho nó'
     });
 };
- exports.updateUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This route is not yet defined!'
-    });
-};
- exports.deleteUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This route is not yet defined!'
-    });
-};
+
+exports.getUser = factory.getOne(User);
+exports.getAllUsers = factory.getAll(User);
+
+// Không được cập nhật mật khẩu với cái này!
+ exports.updateUser = factory.updateOne(User)
+ exports.deleteUser = factory.deleteOne(User);

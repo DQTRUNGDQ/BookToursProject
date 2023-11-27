@@ -1,0 +1,138 @@
+include _reviewCard
+
+doctype html 
+html  
+    header  
+        meta(charset="UTF-8" ) 
+        meta(name="viewport" content="width=device-width, initial-scale=1.0" ) 
+
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css')
+
+        link(rel='stylesheet' href='/css/TourDetails.css')
+        link(rel='stylesheet' href='/css/style.css')
+        link(rel='stylesheet' href='/css/grid.css')
+        link(rel='stylesheet' href='/css/responsive.css')
+        link(rel='shortcut icon' type = '/image/png' href='img/favicon.png')
+
+
+
+        title Natours | #{title}
+    body
+        // HEADER
+        header.header-dt
+            .header-container-dt
+                nav.header-bar-dt
+                    a.header-bar-logo-dt(href='/')
+                        img(src='/img/logo-white.png' alt='Natours logo')
+                    ul.header-bar__list-dt
+                        li.header-bar__list-item-dt 
+                            a.header-bar__item-link-dt Trải nghiệm phù hợp
+                        li.header-bar__list-item-dt
+                            a.header-bar__item-link-dt Tours
+                        li.header-bar__list-item-dt
+                            a.header-bar__item-link-dt Về chúng tôi
+                        li.header-bar__list-item-dt
+                            a.header-bar__item-link-dt Tin tức
+                        li.header-bar__list-item-dt 
+                            a.header-bar__item-link-dt Liên hệ
+                    ul.header-bar__search-dt
+                        li.header-bar__search-item-dt
+                            a.header-bar__Sitem-dt
+                                i.fa-regular.fa-heart
+                    .btn-header-dt
+                        a(href='')
+                            button.nav__el-dt Đăng Nhập
+                            button.nav__el-dt.nav__el--cta-dt Đăng Ký
+
+
+
+        mixin overviewBox(label, text, icon)
+            .overview-box__detail
+                svg.overview-box__icon
+                    use(xlink:href=`/img/icons.svg#icon-${icon}`)
+                span.overview-box__label=label
+                span.overview-box__text= text
+        
+
+        // CONTENT
+        block content
+            section.section-header
+                .header__hero
+                    .header__hero-overlay &nbsp;
+                    img.header__hero-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+
+                .heading-box
+                    h1.heading-primary
+                        span= `${tour.name}`
+                    .heading-box__group
+                        .heading-box__detail
+                            svg.heading-box__icon
+                                use(xlink:href='/img/icons.svg#icon-clock')
+                            span.heading-box__text= `${tour.duration} Ngày`
+                        .heading-box__detail
+                            svg.heading-box__icon
+                                use(xlink:href='/img/icons.svg#icon-map-pin')
+                            span.heading-box__text= tour.startLocation.description
+
+            section.section-description
+                .overview-box
+                   div 
+                    .overview-box__group
+                        h2.heading-secondary.ma-bt-lg Quick facts
+
+                        - const date = tour.startDates[0].toLocaleString('vi-VN', {day: 'numeric', month: 'long', year: 'numeric'})
+                        +overviewBox('Ngày khởi hành',date, 'calendar')
+                        +overviewBox('Số du khách tham gia',`${tour.maxGroupSize} người`, 'user')
+                        +overviewBox('Xếp hạng',`${tour.ratingsAverage} /5`, 'star')
+
+                    .overview-box__group
+                        h2.heading-secondary.ma-bt-lg Your tour guides
+
+                        each guide in tour.guides
+                            .overview-box__detail
+                                img.overview-box__img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
+                                span.overview-box__label= guide.role
+                                span.overview-box__text= guide.name
+
+                .description-box
+                    h2.heading-secondary.ma-bt-lg= `Về ${tour.name} Tour`
+                    - const paragraphs = tour.description.split('\n');
+                    each p in paragraphs
+                        p.description__text= p
+                    
+            section.section-pictures
+                each img, i in tour.images
+                    .picture-box
+                        img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`,
+                        class= `picture-box__img--${i+1}`)
+
+            section.section-map
+                #map
+
+            section.section-reviews
+                .reviews
+                    each review in tour.reviews
+                        +reviewCard(review)
+
+            section.section-cta
+                .cta
+                    .cta__img.cta__img--logo
+                        img(src='/img/logo-white.png', alt='Natours logo')
+                    img.cta__img.cta__img--1(src=`/img/tours/${tour.images[1]}`, alt='Ảnh về Tour')
+                    img.cta__img.cta__img--2(src=`/img/tours/${tour.images[0]}`, alt='Ảnh về Tour ')
+                    .cta__content
+                        h2.heading-secondary Bạn đang chờ đợi điều gì?
+                        p.cta__text= `${tour.duration} ngày. 1 chuyến đi. Đong đầy những kỷ niệm. Hãy làm nó ngay ngày hôm nay!`
+                        button.btn.btn--green.span-all-rows Đặt Tour bây giờ!
+
+        .footer
+            .footer__logo
+                img(src='/img/logo-green.png' alt='Natours logo')
+            ul.footer__nav
+                li(href="#") Về chúng tôi
+                li(href="#") Tải xuống app
+                li(href="#") Trở thành một hướng dẫn viên
+                li(href="#") Nghề nghiệp
+                li(href="#") Liên hệ
+            p.footer__copyright &copy; by TrungDevGod. All rights reserved.
